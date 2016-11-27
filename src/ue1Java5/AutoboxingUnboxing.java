@@ -37,4 +37,6 @@ public class AutoboxingUnboxing {
         }
         System.out.println("Sum = " + sum);
     }
+
+    public void test(){}
 }
