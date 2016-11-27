@@ -36,14 +36,14 @@ oder vom Programmierer selbst platziert. Attikus selbst bleibt fest auf einer Ka
 Oberon kennt //// Befehle und //// Testbefehle, durch deren Aufruf ein Programmierer Oberon durch ein gegebenes Oberon-Terretorium steuern kann.
 Oberon ist in der lage mit einfachen Befehlen die Wiese zu erkunden. Diese Befehlen werden im Folgenden aufgelistet:
 
-    * void vor(): Oberon geht eine Kachel in seiner aktuellen Blickrichtung nach vorne.
-    * void linksUm(): Oberon dreht sich auf der Kachel, auf der er gerade steht, um 90 Grad entgegen dem Uhrzeigersinn.
-    * void nimm(): Oberon nimmt von der Kachel, auf der er sich gerade befindet, genau ein Knochen, d.h. anschließend hat Oberon ein Knochen mehr im Maul und
+    * void moveAhead(): Oberon geht eine Kachel in seiner aktuellen Blickrichtung nach vorne.
+    * void turnLeft(): Oberon dreht sich auf der Kachel, auf der er gerade steht, um 90 Grad entgegen dem Uhrzeigersinn.
+    * void take(): Oberon nimmt von der Kachel, auf der er sich gerade befindet, genau einen Knochen, d.h. anschließend hat Oberon einen Knochen mehr im Maul und
                    auf der Kachel liegt ein Knochen weniger als vorher.
-    * void gib(): Oberon legt auf der Kachel, auf der er sich gerade befindet, genau ein Knochen aus seinem Maul ab, d.h. er hat anschließend ein Knochen weniger im Maul,
-                  und auf der Kachel liegt ein Knochen mehr als vorher.
-    * boolean vornFrei(): Liefert den Wert true, falls sich auf der Kachel in Blickrichtung vor dem Hamster Baum beﬁndet. Ist die Kachel durch einen Baum blockiert,
+    * void give(): Oberon legt auf der Kachel, auf der er sich gerade befindet, genau ein Knochen aus seinem Maul ab, d.h. er hat anschließend ein Knochen weniger im Maul,
+                  und auf der Kachel liegt ein Knochen mehr als vorher oder Attikus hat einen Knochen mehr.
+    * boolean clearAhead(): Liefert den Wert true, falls sich auf der Kachel in Blickrichtung vor dem Hamster kein Baum beﬁndet. Ist die Kachel durch einen Baum blockiert,
                           dann wird der Wert false geliefert.
-    * boolean maulLeer(): Liefert den Wert false, falls Oberon ein oder mehrere Knochen im Maul hat. Beﬁnden sich kein Knochen im Maul von Oberon, dann wird der Wert true geliefert.
-    * boolean kornDa(): Liefert den Wert true, falls auf der Kachel, auf der der Oberon gerade steht, ein oder mehrere Knochen liegen.
-                        Beﬁndet sich kein Knochen auf der Kachel, dann wird der Wert false geliefert.
+    * boolean mawEmpty(): Liefert den Wert false, falls Oberon einen oder mehrere Knochen im Maul hat. Beﬁnden sich kein Knochen im Maul von Oberon, dann wird der Wert true geliefert.
+    * boolean boneAvailable(): Liefert den Wert true, falls auf der Kachel, auf der Oberon gerade steht, ein oder mehrere Knochen liegen.
+                               Beﬁndet sich kein Knochen auf der Kachel, dann wird der Wert false geliefert.
