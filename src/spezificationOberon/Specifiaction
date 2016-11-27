@@ -1,0 +1,45 @@
+1 Mini-Programmierwelt / Das Java-Oberon-Modell:
+
+Das Oberon-Modell ist ein spezielles didatktisches Modell zum Erlernen der Programmierung.
+Im Modell nimmt Oberon(ein Hund) die Rolle des Computers ein. Oberon kann befehle entgegen nehmen ähnlich wie ein Computer.
+Als Programmierer werden Ihnen bestimmte Aufgaben gestellt, die durch die Steuerung des Hundes zu lösen sind. Sogenannte
+Oberon-Aufgaben. Zu diesen Aufgaben müssen Sie in der Oberon-Sprache, die fast vollständig Java entspricht, Oberon-Programme entwickeln,
+die die Aufgaben korrekt und vollständig lösen. Diese Aufgaben werden nach und nach komplexer. Zum Lösen der Aufgaben
+müssen bestimmte Programmierkonzepte eingestezt werden, die im Oberon-Modell inkrementell eingeführt werden.
+
+Die Grundidee des Oberon-Modells ist einfach: Sie als Programmierer müssen einen(virtuellen) Hund
+durch eine (virtuelle) Landschaft steuern und ihn gegebene Aufgaben lösen lassen.
+
+1.1 Landschaft
+
+Die Landschaft(Wiese) wird durch Kacheln repräsentiert, die Anzahl der Kacheln ist variabel aber nie unendlich groß.
+Hund Oberon sucht auf einer schönen Wiese Knochen zum Ausgraben, diese Knochen sind durch Knochensymbole auf der Landschaft markiert. Es können
+mehrere Knochen auf einer Kachel liegen, die der Hund aufsammeln kann.
+Zusätzlich können auf der Wiese Bäume stehen, wodurch die Kachel auf dem sie stehen blockiert sind, es können keine Knochen dort gefunden werden,
+da der Hund diese Kacheln nicht betreten kann.
+Die Wiese kann nicht verlassen, da diese vollständig mit Bäumen umgeben ist(nicht sichtbar für den Benutzer).
+
+1.2 Oberon (Hund)
+
+Im Oberon-Modell existiert immer genau ein Oberon. Oberon steht dabei auf einer Kachel der Landschaft. Diese darf nicht durch einen Baum
+blockiert sein, sie kann jedoch Knochen enthalten. Oberon kann in vier unterschiedlichen Blickrichtungen(Nord, Süd, West, Ost) auf den
+Kacheln stehen. Je nach Blickrichtung wird Oberon durch unterschiedliche Symbole repräsentiert.
+
+
+1.3 Attikus (Besitzer)
+
+Auf der Landschaft befindet sich der Besitzer (Attikus) von Oberon zu dem er seine gefundenen Knochen bringen kann. Dieser wird durch ein vorgegebenes Programm
+oder vom Programmierer selbst platziert. Attikus selbst bleibt fest auf einer Kachel und ist nicht zu steuern, Oberon kann aber auf der selben Kachel wie Attikus stehen.
+
+1.4 Befehle
+
+Oberon kennt //// Befehle und //// Testbefehle, durch deren Aufruf ein Programmierer Oberon durch ein gegebenes Oberon-Terretorium steuern kann.
+Oberon ist in der lage mit einfachen Befehlen die Wiese zu erkunden. Diese Befehlen werden im Folgenden aufgelistet:
+
+    * void vor():
+    * void linksUm():
+    * void nimm():
+    * void gib():
+    * boolean vornFrei():
+    * boolean maulLeer():
+    * boolean knochenDa():
