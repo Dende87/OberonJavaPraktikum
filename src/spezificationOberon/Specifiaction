@@ -33,7 +33,7 @@ oder vom Programmierer selbst platziert. Attikus selbst bleibt fest auf einer Ka
 
 1.4 Befehle
 
-Oberon kennt 4 Befehle und 3 Testbefehle, durch deren Aufruf ein Programmierer Oberon durch ein gegebenes Oberon-Terretorium steuern kann.
+Oberon kennt //// Befehle und //// Testbefehle, durch deren Aufruf ein Programmierer Oberon durch ein gegebenes Oberon-Terretorium steuern kann.
 Oberon ist in der lage mit einfachen Befehlen die Wiese zu erkunden. Diese Befehlen werden im Folgenden aufgelistet:
 
     * void moveAhead(): Oberon geht eine Kachel in seiner aktuellen Blickrichtung nach vorne.
