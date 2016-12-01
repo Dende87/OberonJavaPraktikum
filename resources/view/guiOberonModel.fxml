@@ -13,6 +13,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.input.KeyCodeCombination?>
@@ -87,44 +88,95 @@
                       </Menu>
                       <Menu mnemonicParsing="false" text="Territory">
                         <items>
-                              <Menu mnemonicParsing="false" text="Unspecified Menu">
+                              <Menu mnemonicParsing="false" text="Save As..">
                                 <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                                    <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                                  <MenuItem mnemonicParsing="false" text="XML" />
+                                    <MenuItem mnemonicParsing="false" text="JAXB" />
+                                    <MenuItem mnemonicParsing="false" text="Serialise" />
                                 </items>
                               </Menu>
-                              <Menu mnemonicParsing="false" text="Unspecified Menu">
+                              <Menu mnemonicParsing="false" text="Load">
                                 <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                                  <MenuItem mnemonicParsing="false" text="XML" />
                                 </items>
                               </Menu>
-                              <Menu mnemonicParsing="false" text="Unspecified Menu">
+                              <Menu mnemonicParsing="false" text="Save as picture">
                                 <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                                  <MenuItem mnemonicParsing="false" text="save...." />
                                 </items>
                               </Menu>
-                              <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                              <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                              <MenuItem mnemonicParsing="false" text="Print" />
+                              <MenuItem mnemonicParsing="false" text="Change size" />
                               <SeparatorMenuItem mnemonicParsing="false" />
-                              <RadioMenuItem mnemonicParsing="false" text="Unspecified Action">
+                              <RadioMenuItem mnemonicParsing="false" text="Place Oberon">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="u" />
                                  </toggleGroup>
                               </RadioMenuItem>
-                              <RadioMenuItem mnemonicParsing="false" text="Unspecified Action" toggleGroup="$u" />
-                              <RadioMenuItem mnemonicParsing="false" text="Unspecified Action" toggleGroup="$u" />
-                              <RadioMenuItem mnemonicParsing="false" text="Unspecified Action" toggleGroup="$u" />
+                              <RadioMenuItem mnemonicParsing="false" text="Place Bone" toggleGroup="$u" />
+                              <RadioMenuItem mnemonicParsing="false" text="Place tree" toggleGroup="$u" />
+                              <RadioMenuItem mnemonicParsing="false" text="Delete stove" toggleGroup="$u" />
                         </items>
                       </Menu>
                       <Menu mnemonicParsing="false" text="Oberon">
                         <items>
-                          <MenuItem mnemonicParsing="false" text="About" />
+                          <MenuItem mnemonicParsing="false" text="mawEmpty" />
+                              <MenuItem mnemonicParsing="false" text="turnLeft()">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" text="moveAhead()">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" text="take()">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" text="give()">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
                         </items>
                       </Menu>
                         <Menu mnemonicParsing="false" text="Simulation">
                           <items>
-                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                            <MenuItem mnemonicParsing="false" text="Start/Continue">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="F11" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                                 <graphic>
+                                    <ImageView pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../guiMenu/images/play_16x16.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></MenuItem>
+                              <MenuItem mnemonicParsing="false" text="Pause">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../guiMenu/images/pause_16x16.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" text="Stop">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="F12" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                                 <graphic>
+                                    <ImageView pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../guiMenu/images/stop_16x16.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuItem>
                           </items>
                         </Menu>
                     </menus>
@@ -154,11 +206,181 @@
                <children>
                   <ToolBar layoutX="62.0" layoutY="-7.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                      <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" text="Button" />
-                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" text="Button" />
-                        <Button layoutX="59.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" text="Button" />
+                      <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="New" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/new_file_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="Open" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/open_folder_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Separator layoutX="157.0" layoutY="10.0" orientation="VERTICAL" prefHeight="0.0" prefWidth="5.0" />
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="59.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="Save" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/save_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="118.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="Complie" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/compile_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                         <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="5.0" />
-                        <Slider />
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="167.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="Change size" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/change_size_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="370.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="Place Oberon" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/dog_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="419.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="Place bone" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/bone_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="468.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="Place tree" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/tree_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="517.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="Delete stove" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/delete_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Separator layoutX="216.0" layoutY="10.0" orientation="VERTICAL" prefHeight="0.0" prefWidth="5.0" />
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="422.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="mawEmpty()" />
+                           </tooltip>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="625.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="turnLeft()" />
+                           </tooltip>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="625.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="moveAhead()" />
+                           </tooltip>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="625.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="take()" />
+                           </tooltip>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="625.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="give()" />
+                           </tooltip>
+                        </Button>
+                        <Separator layoutX="471.0" layoutY="10.0" orientation="VERTICAL" prefHeight="0.0" prefWidth="5.0" />
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="736.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="Play" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/play_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="677.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@../guiMenu/images/pause_32x32.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                           <tooltip>
+                              <Tooltip text="Pause" />
+                           </tooltip>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="677.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+                           <tooltip>
+                              <Tooltip text="Stop" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/stop_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Separator layoutX="726.0" layoutY="10.0" orientation="VERTICAL" prefHeight="0.0" prefWidth="5.0" />
+                        <Slider>
+                           <tooltip>
+                              <Tooltip text="Simulation speed" />
+                           </tooltip></Slider>
                     </items>
                   </ToolBar>
                </children>

@@ -17,9 +17,9 @@ public class oberonMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/guiOberonModel.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../view/guiOberonModel.fxml"));
 
-        Scene scene = new Scene(root,800,600);
+        Scene scene = new Scene(root,1200,600);
         primaryStage.setTitle("First Start");
         primaryStage.setScene(scene);
         primaryStage.show();
