@@ -318,26 +318,61 @@
                            <tooltip>
                               <Tooltip text="mawEmpty()" />
                            </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/dog_maw_bone32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
                         <Button contentDisplay="GRAPHIC_ONLY" layoutX="625.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
                            <tooltip>
                               <Tooltip text="turnLeft()" />
                            </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/dog_turn_left_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
                         <Button contentDisplay="GRAPHIC_ONLY" layoutX="625.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
                            <tooltip>
                               <Tooltip text="moveAhead()" />
                            </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/dog_move_ahead_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
                         <Button contentDisplay="GRAPHIC_ONLY" layoutX="625.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
                            <tooltip>
                               <Tooltip text="take()" />
                            </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/dog_take_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
                         <Button contentDisplay="GRAPHIC_ONLY" layoutX="625.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
                            <tooltip>
                               <Tooltip text="give()" />
                            </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../guiMenu/images/dog_give_32x32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
                         <Separator layoutX="471.0" layoutY="10.0" orientation="VERTICAL" prefHeight="0.0" prefWidth="5.0" />
                         <Button contentDisplay="GRAPHIC_ONLY" layoutX="736.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
