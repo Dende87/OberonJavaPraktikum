@@ -5,15 +5,15 @@ package model;
  */
 public class Tile {
 
-    private TileType stoveType;
+    private TileType tileType;
     private int boneCount;
 
     public TileType getTileType() {
-        return stoveType;
+        return tileType;
     }
 
     public void setTileType(TileType stoveType) {
-        this.stoveType = stoveType;
+        this.tileType = stoveType;
     }
 
     public int getBoneCount() {
