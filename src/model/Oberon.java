@@ -21,6 +21,13 @@ public class Oberon {
     }
 
     //wo befindet sich Oberon
+    public int[] getOberonPosition(){
+        int[] position = new int[2];
+        position[0] = currentRow;
+        position[1] = currentColumn;
+        return position;
+    }
+
     //setze Oberon auf Spielfeld
     public void setOberonOnTerritory(int row, int column){
         currentRow = row;
