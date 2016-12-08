@@ -1,5 +1,8 @@
 package model;
 
+import java.lang.reflect.Array;
+import java.util.HashMap;
+
 /**
  * Created by Dende on 03.12.2016.
  */
@@ -38,10 +41,19 @@ public class Territory {
     //Was befindet sich je nach Blickrichtung vor einer Kachel
     public TileType getTileTypeFromNextTileOfDirection(Direction direction, int row, int column){
 
+        int newRow = getNextTileFromDirection(direction, row, column)[0]; // 0 = Row
+        int newColumn = getNextTileFromDirection(direction, row, column)[1]; // 1 = Column
+
+        return getTileType(newRow,newColumn);
+    }
+
+    public int[] getNextTileFromDirection(Direction direction, int row, int column) {
+
+        int[] position = new int[2];
         int newRow = row;
         int newColumn = column;
 
-        switch (direction){
+        switch (direction) {
             case NORTH:
                 newRow--;
                 break;
@@ -54,9 +66,13 @@ public class Territory {
             case WEST:
                 newColumn--;
                 break;
-            default: throw new RuntimeException("not implemented Enum: Direction");
+            default:
+                throw new RuntimeException("not implemented Enum: Direction");
         }
-        return getTileType(newRow,newColumn);
+        position[0] = newRow;
+        position[1] = newColumn;
+
+        return position;
     }
 
     //ändere den Typ einer Kachel
