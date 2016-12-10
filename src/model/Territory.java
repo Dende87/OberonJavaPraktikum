@@ -1,5 +1,7 @@
 package model;
 
+import javafx.geometry.Pos;
+
 import java.lang.reflect.Array;
 import java.util.HashMap;
 
@@ -17,41 +19,43 @@ public class Territory {
 
     //was ist auf einer Kachel?
     //Sind Knochen auf einer Kachel?
-    public TileType getTileType(int row, int column){
-        if(row < 0 || column < 0 || row >= gamefield.length || column >= gamefield.length) return TileType.OUT_OF_FIELD;
-        return gamefield[row][column].getTileType();
+    public TileType getTileType(Position position){
+        if(position.getRow() < 0 || position.getColumn() < 0 || position.getRow() >= gamefield.length || position.getColumn() >= gamefield.length) return TileType.OUT_OF_FIELD;
+        return gamefield[position.getRow()][position.getColumn()].getTileType();
     }
 
     //Wie viele Knochen sind auf einer Kachel?
-    public int getBoneCount(int row, int column){
-        if(getTileType(row,column)!= TileType.BONE) return 0;
-        return gamefield[row][column].getBoneCount();
+    public int getBoneCount(Position position){
+        if(getTileType(position)!= TileType.BONE) return 0;
+        return gamefield[position.getRow()][position.getColumn()].getBoneCount();
     }
 
     //entferne Knochen von einer Kachel, falls vorhanden
-    public void removeBoneFromTile(int row, int column){
-        gamefield[row][column].setBoneCount(getBoneCount(row,column) == 0 ? 0: getBoneCount(row,column)-1);
+    public void removeBoneFromTile(Position position){
+        gamefield[position.getRow()][position.getColumn()].setBoneCount(getBoneCount(position) == 0 ? 0: getBoneCount(position)-1);
     }
 
     //füge Knochen auf einer Kachel hinzu
-    public void addBoneOnTile(int row, int column){
-        gamefield[row][column].setBoneCount(getBoneCount(row, column)+1);
+    public void addBoneOnTile(Position position){
+        gamefield[position.getRow()][position.getColumn()].setBoneCount(getBoneCount(position)+1);
     }
 
     //Was befindet sich je nach Blickrichtung vor einer Kachel
-    public TileType getTileTypeFromNextTileOfDirection(Direction direction, int row, int column){
+    public TileType getTileTypeFromNextTileOfDirection(Direction direction, Position position){
 
-        int newRow = getNextTileFromDirection(direction, row, column)[0]; // 0 = Row
-        int newColumn = getNextTileFromDirection(direction, row, column)[1]; // 1 = Column
+        Position newPosition = new Position(position.getRow(), position.getColumn());
+        newPosition.setRow(getNextTileFromDirection(direction, position).getRow());
+        newPosition.setColumn(getNextTileFromDirection(direction, position).getColumn());
 
-        return getTileType(newRow,newColumn);
+        return getTileType(newPosition);
     }
 
-    public int[] getNextTileFromDirection(Direction direction, int row, int column) {
+    public Position getNextTileFromDirection(Direction direction, Position position) {
 
-        int[] position = new int[2];
-        int newRow = row;
-        int newColumn = column;
+        Position newPosition = new Position(position.getRow(), position.getColumn());
+
+        int newRow = position.getRow();
+        int newColumn = position.getColumn();
 
         switch (direction) {
             case NORTH:
@@ -69,16 +73,16 @@ public class Territory {
             default:
                 throw new RuntimeException("not implemented Enum: Direction");
         }
-        position[0] = newRow;
-        position[1] = newColumn;
+        newPosition.setRow(newRow);
+        newPosition.setColumn(newColumn);
 
-        return position;
+        return newPosition;
     }
 
     //ändere den Typ einer Kachel
-    public void changeTileType(int row, int column, TileType tileType){
-        if(getTileType(row, column)!= TileType.OUT_OF_FIELD) {
-            gamefield[row][column].setTileType(tileType);
+    public void changeTileType(Position position, TileType tileType){
+        if(getTileType(position)!= TileType.OUT_OF_FIELD) {
+            gamefield[position.getRow()][position.getColumn()].setTileType(tileType);
         }
     }
 

@@ -8,46 +8,41 @@ public class Oberon {
     private Direction direction;
     private Territory territory;
     private final TileType oberonTileType = TileType.OBERON;
-    private int currentRow;
-    private int currentColumn;
+    private Position position;
 
     //Oberon blickt beim ersten setzen auf dem Spielfeld immer nach Osten
     //Oberon kennt sein Spielfeld
-    public Oberon(Territory territory, int row, int column) {
-        currentRow = row;
-        currentColumn = column;
+    public Oberon(Territory territory, Position position) {
+        this.position = position;
         this.direction = Direction.EAST;
         this.territory = territory;
     }
 
     //wo befindet sich Oberon
-    public int[] getOberonPosition(){
-        int[] position = new int[2];
-        position[0] = currentRow;
-        position[1] = currentColumn;
+    public Position getOberonPosition(){
         return position;
     }
 
     //setze Oberon auf Spielfeld
-    public void setOberonOnTerritory(int row, int column){
-        currentRow = row;
-        currentColumn = column;
-        territory.changeTileType(row, column, oberonTileType);
+    public void setOberonOnTerritory(Position position){
+        this.position.setRow(position.getRow());
+        this.position.setColumn(position.getColumn());
+        territory.changeTileType(position, oberonTileType);
     }
 
     //was liegt vor mir(vor meiner Blickrichtung)
     public TileType getTileTypeFromDirection(){
-        return territory.getTileTypeFromNextTileOfDirection(direction, currentRow, currentColumn);
+        return territory.getTileTypeFromNextTileOfDirection(direction, position);
     }
 
     //nimm Knochen(falls welche vorhanden)
     public void takeBone(){
-        territory.removeBoneFromTile(currentRow, currentColumn);
+        territory.removeBoneFromTile(position);
     }
 
     //lass Knochen fallen(wenn du welche hast)
     public void dropBone(){
-        territory.addBoneOnTile(currentRow, currentColumn);
+        territory.addBoneOnTile(position);
     }
 
     //vorneFrei
@@ -61,10 +56,7 @@ public class Oberon {
     //geh nach vorne Richtung Blickrichtung(falls es geht)
     public void moveAhead(){
         if(isFrontFree()){
-            int newRow = currentRow;
-            int newColumn = currentColumn;
-
-            setOberonOnTerritory(territory.getNextTileFromDirection(direction, currentRow, currentColumn)[0],territory.getNextTileFromDirection(direction, currentRow, currentColumn)[1]);
+            setOberonOnTerritory(territory.getNextTileFromDirection(direction, position));
         }
     }
 
