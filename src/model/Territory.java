@@ -49,31 +49,24 @@ public class Territory {
     //Gib mir die nächste Position je nach Blickrichtung
     public Position getNextTileFromDirection(Direction direction, Position position) {
 
-        Position newPosition = new Position(position.getRow(), position.getColumn());
-
-        int newRow = position.getRow();
-        int newColumn = position.getColumn();
-
         switch (direction) {
             case NORTH:
-                newRow--;
+                position.setRow(position.getRow()-1);
                 break;
             case EAST:
-                newColumn++;
+                position.setColumn(position.getColumn()+1);
                 break;
             case SOUTH:
-                newRow++;
+                position.setRow(position.getRow()+1);
                 break;
             case WEST:
-                newColumn--;
+                position.setColumn(position.getColumn()-1);
                 break;
             default:
                 throw new RuntimeException("not implemented Enum: Direction");
         }
-        newPosition.setRow(newRow);
-        newPosition.setColumn(newColumn);
 
-        return newPosition;
+        return position;
     }
 
     //ändere den Typ einer Kachel
