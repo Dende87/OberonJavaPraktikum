@@ -43,13 +43,10 @@ public class Territory {
     //Was befindet sich je nach Blickrichtung vor einer Kachel
     public TileType getTileTypeFromNextTileOfDirection(Direction direction, Position position){
 
-        Position newPosition = new Position(position.getRow(), position.getColumn());
-        newPosition.setRow(getNextTileFromDirection(direction, position).getRow());
-        newPosition.setColumn(getNextTileFromDirection(direction, position).getColumn());
-
-        return getTileType(newPosition);
+        return getTileType(getNextTileFromDirection(direction, position));
     }
 
+    //Gib mir die nächste Position je nach Blickrichtung
     public Position getNextTileFromDirection(Direction direction, Position position) {
 
         Position newPosition = new Position(position.getRow(), position.getColumn());
