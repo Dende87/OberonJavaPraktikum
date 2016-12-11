@@ -25,8 +25,7 @@ public class Oberon {
 
     //setze Oberon auf Spielfeld
     public void setOberonOnTerritory(Position position){
-        this.position.setRow(position.getRow());
-        this.position.setColumn(position.getColumn());
+        this.position = position;
         territory.changeTileType(position, oberonTileType);
     }
 
