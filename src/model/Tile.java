@@ -12,8 +12,8 @@ public class Tile {
         return tileType;
     }
 
-    public void setTileType(TileType stoveType) {
-        this.tileType = stoveType;
+    public void setTileType(TileType tileType) {
+        this.tileType = tileType;
     }
 
     public int getBoneCount() {
