@@ -30,9 +30,20 @@ public class Territory {
         return gamefield[position.getRow()][position.getColumn()].getBoneCount();
     }
 
+    public boolean boneAvailable(Position position){
+        if(getBoneCount(position) > 0){
+            return true;
+        }
+        return false;
+    }
+
     //entferne Knochen von einer Kachel, falls vorhanden
-    public void removeBoneFromTile(Position position){
-        gamefield[position.getRow()][position.getColumn()].setBoneCount(getBoneCount(position) == 0 ? 0: getBoneCount(position)-1);
+    public boolean removeBoneFromTile(Position position){
+        if(!boneAvailable(position)){
+            return false;
+        }
+        gamefield[position.getRow()][position.getColumn()].setBoneCount(getBoneCount(position)-1);
+        return true;
     }
 
     //füge Knochen auf einer Kachel hinzu

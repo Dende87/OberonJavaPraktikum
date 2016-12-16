@@ -9,6 +9,7 @@ public class Oberon {
     private Territory territory;
     private final TileType oberonTileType = TileType.OBERON;
     private Position position;
+    private int countBone;
 
     //Oberon blickt beim ersten setzen auf dem Spielfeld immer nach Osten
     //Oberon kennt sein Spielfeld
@@ -16,6 +17,7 @@ public class Oberon {
         this.position = position;
         this.direction = Direction.EAST;
         this.territory = territory;
+        this.countBone = 0;
     }
 
     //wo befindet sich Oberon
@@ -35,13 +37,29 @@ public class Oberon {
     }
 
     //nimm Knochen(falls welche vorhanden)
-    public void takeBone(){
-        territory.removeBoneFromTile(position);
+    public boolean takeBone(){
+        if(territory.removeBoneFromTile(position)){
+            this.countBone++;
+            return true;
+        }
+        return false;
     }
 
     //lass Knochen fallen(wenn du welche hast)
-    public void dropBone(){
-        territory.addBoneOnTile(position);
+    public boolean dropBone(){
+        if(this.countBone > 0){
+            this.countBone--;
+            territory.addBoneOnTile(position);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean mawEmpty(){
+        if(this.countBone > 0){
+            return false;
+        }
+        return true;
     }
 
     //vorneFrei
